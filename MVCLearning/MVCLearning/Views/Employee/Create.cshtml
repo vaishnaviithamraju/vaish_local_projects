@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h3 style="color:blue;font-style:italic">ADD EMPLOYEE TO DATABASE</h3>
+<div>
+    <form method="post" action="/Employee/Create" >
+        <div class="form-group">
+            <label for="FirstName">FirstName:</label>
+            <input type="text" class="form-control" name="FirstName"/>
+            @Html.ValidationMessage("FirstName", new { @style = "color:red" })
+        </div>
+        <div class="form-group">
+            <label for="LastName">LastName:</label>
+            <input type="text" class="form-control" name="LastName" />
+            @Html.ValidationMessage("LastName",new { @style="color:red"})
+        </div>
+        <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="text" class="form-control"  name="Email"/>
+            @Html.ValidationMessage("Email", new { @style = "color:red" })
+        </div>
+        <div class="form-group">
+            <label for="Password">Password:</label>
+            <input type="password" class="form-control" name="Password"/>
+            @Html.ValidationMessage("Password", new { @style = "color:red" })
+        </div>
+        @*<div class="form-group">
+            <label for="IsActive">IsActive:</label>
+            @Html.CheckBoxFor(x=>x.IsActive)
+        </div>*@
+        <div class="form-group">
+            <label for="Region">Region:</label>
+            <div>
+                <input type="radio" class="radio" style="float:left" /><label style="float:left" name="Region">ASIA-PAC</label>
+                <input type="radio" class="radio" style="float:left" /><label style="float:left" name="Region">EUROPE</label>
+                <input type="radio" class="radio" style="float:left" /><label style="float:left;clear:right" name="Region">AMERICA</label>
+            </div>
+        </div>
+        <br />
+        <div class="form-group" style="clear:left">
+            <label for="Created On">Created On:</label>
+            <input type="date" class="form-control" name="DateOfBirth" />
+        </div>
+        <div class="form-group">
+            <label   for="Documents">Documents:</label>
+            <input type="file" class="checkbox" name="docs" />
+        </div>
+        <input type="submit" class="btn-primary" value="Save"/>
+    </form>
+</div>
+

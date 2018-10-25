@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+    @using MVCLearning.ViewModels
+@model EmployeesList
+<h2>Details</h2>
+
+<table>
+    <tr>
+        <th>Employee Name </th>
+        <th>&nbsp;&nbsp;</th>
+        <th>Email </th>
+        @*<th>IsActive </th>*@
+    </tr>
+    @foreach (EmployeeViewModel em in Model.Employees)
+    {
+    <tr>
+        <td>@em.FullName</td><td>&nbsp;&nbsp;</td>
+        <td>@em.Email</td>
+        @*<td>@em.IsActive</td>*@
+    </tr>
+    }
+</table>
